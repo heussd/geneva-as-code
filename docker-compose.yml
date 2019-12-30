@@ -6,6 +6,6 @@ services:
     volumes:
       - '/geneva/:/geneva:ro'
     environment:
-      - MINIDLNA_FRIENDLY_NAME=$(HOSTNAME)
+      - MINIDLNA_FRIENDLY_NAME=${HOSTNAME}
       - 'MINIDLNA_MEDIA_DIR=/geneva/'
   
