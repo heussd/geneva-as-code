@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  minidlna:
+    image: cytomich/rpi-docker-minidlna
+    network_mode: host
+    volumes:
+      - '/geneva/:/geneva:ro'
+    environment:
+      - MINIDLNA_FRIENDLY_NAME=$(HOSTNAME)
+      - 'MINIDLNA_MEDIA_DIR=/geneva/'
+  
