@@ -8,4 +8,11 @@ services:
     environment:
       - MINIDLNA_FRIENDLY_NAME=$(HOSTNAME)
       - 'MINIDLNA_MEDIA_DIR=/geneva/'
+  samba:
+    image: pwntr/samba-alpine
+    restart: always
+    network_mode: host
+    volumes:
+      - '/geneva/:/shared'
+      - '${PWD}/smb.conf:/config/smb.conf'
   
