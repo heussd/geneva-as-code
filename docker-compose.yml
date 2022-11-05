@@ -1,18 +1,11 @@
 version: "3.7"
 services:
-  minidlna:
-    image: johnelse/docker-minidlna
-    network_mode: host
-    volumes:
-      - '/geneva/:/geneva:ro'
-    environment:
-      - MINIDLNA_FRIENDLY_NAME=${HOSTNAME}
-      - 'MINIDLNA_MEDIA_DIR=/geneva/'
   samba:
     image: pwntr/samba-alpine
     restart: always
     network_mode: host
     volumes:
-      - '/geneva/:/shared'
+      - '/geneva/:/shared/geneva'
+      - '/geneva-usb/:/shared/geneva-usb'
       - '${PWD}/smb.conf:/config/smb.conf'
   
