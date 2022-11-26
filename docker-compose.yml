@@ -6,6 +6,6 @@ services:
     network_mode: host
     volumes:
       - '/geneva/:/shared/geneva'
-      - '/geneva-usb/:/shared/geneva-usb'
+      - '/tank/:/shared/tank'
       - '${PWD}/smb.conf:/config/smb.conf'
   
